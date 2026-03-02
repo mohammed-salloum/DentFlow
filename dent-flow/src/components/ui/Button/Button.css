@@ -1,0 +1,112 @@
+/* =========================
+   Base Button Styles
+   --------------------------------
+   Core styling shared by all button variants:
+   - Flex layout for icon + text
+   - Gap between icon and text
+   - Rounded corners, padding, min-width
+   - Smooth transitions for hover and state changes
+========================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  transition: all var(--transition-fast, 0.2s) ease;
+  padding: 0.5rem 1rem;
+  min-width: 120px;
+  border: 1px solid transparent;
+  line-height: 1.2;
+}
+
+/* =========================
+   Button Variants
+   --------------------------------
+   Each variant defines background, text color, and hover state.
+   Hover states are disabled if the button is disabled.
+========================= */
+
+/* Primary Button */
+.btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}
+.btn-primary:hover:not(.disabled) {
+  background: var(--btn-primary-hover);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+}
+
+/* Success Button */
+.btn-success {
+  background: var(--success-bg);
+  color: var(--success-text);
+}
+.btn-success:hover:not(.disabled) {
+  background: var(--success-hover);
+}
+
+/* Danger Button */
+.btn-danger {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+}
+.btn-danger:hover:not(.disabled) {
+  background: var(--danger-hover);
+}
+
+/* =========================
+   Danger Outline Button
+   --------------------------------
+   Transparent background with colored border.
+   Hover state changes background to danger color and text to white.
+========================= */
+.btn-danger-outline {
+  background: transparent;                    
+  color: var(--danger-outline-text) !important;     
+  border: 2px solid var(--danger-outline-border);  
+  transition: all var(--transition-fast);
+}
+.btn-danger-outline:hover:not(.disabled) {
+  background: var(--danger-hover);           
+  color: #ffffff !important;                 
+  border-color: var(--danger-hover);
+}
+
+/* Ghost Button */
+.btn-ghost {
+  background: var(--ghost-bg);
+  color: var(--ghost-text);
+}
+.btn-ghost:hover:not(.disabled) {
+  background: var(--bg-muted);
+}
+
+/* =========================
+   Disabled State
+   --------------------------------
+   Makes the button non-interactive and visually muted
+========================= */
+.btn.disabled,
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* =========================
+   Full Width Button
+   --------------------------------
+   Expands the button to fill the container width
+========================= */
+.btn.full-width {
+  width: 100%;
+}

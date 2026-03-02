@@ -1,0 +1,45 @@
+/* =========================================
+   Root Variables
+   Define global CSS variables for fonts, base sizes
+========================================= */
+:root {
+  --main-font-ltr: 'Inter', sans-serif; /* Default LTR font */
+  --main-font-rtl: 'Cairo', sans-serif; /* Default RTL font */
+  --main-font-size: 16px;               /* Base font size */
+}
+
+/* =========================================
+   HTML Base Styles
+   Font sizing, scroll behavior, text direction
+========================================= */
+html {
+  font-size: var(--main-font-size);
+  direction: ltr;  /* Default direction */
+}
+
+html[dir="rtl"] {
+  direction: rtl;  /* Right-to-left support */
+}
+
+/* Body font-family according to direction */
+body {
+  font-family: var(--main-font-ltr);
+  min-height: 100vh;
+  overflow-x: hidden;  /* Prevent horizontal scroll */
+  line-height: 1.5;    /* Default line height */
+}
+
+/* Override font-family for RTL */
+html[dir="rtl"] body {
+  font-family: var(--main-font-rtl);
+}
+
+/* =========================================
+   Global Reset
+   Box-sizing reset, remove default margins and overflow
+========================================= */
+*, *::before, *::after {
+  box-sizing: border-box;  /* Include padding and border in element width */
+  margin: 0;
+  padding: 0;
+}

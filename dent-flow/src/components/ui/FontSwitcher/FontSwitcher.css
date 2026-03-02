@@ -1,0 +1,57 @@
+/* =========================
+   Font Switcher - Themed
+========================= */
+
+/* Container holding all font control buttons */
+.fonts-container {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between buttons */
+  position: relative;
+  z-index: 9999; /* Ensure buttons appear above other content */
+}
+
+/* Individual font control button */
+.font-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md, 8px); /* Rounded corners, uses theme variable */
+  border: 1px solid var(--brand-primary, #2563eb); /* Themed border color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary, #2563eb); /* Text color based on theme */
+  font-weight: 600;
+  font-family: var(--font-ltr, 'Inter', sans-serif); /* Theme-based font */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out; /* Smooth hover and active animations */
+}
+
+/* Hover state - colors and shadow according to theme */
+.font-btn:hover {
+  color: var(--btn-primary-text, #fff); /* Text changes to button text color */
+  background-color: var(--brand-primary-hover, #1d4ed8); /* Hover background */
+  box-shadow: 0 0 6px var(--brand-glow, rgba(37, 99, 235, 0.35)); /* Glow effect */
+}
+
+/* Active (pressed) state */
+.font-btn:active {
+  transform: scale(0.95); /* Slight shrink to indicate press */
+}
+
+/* -------------------------
+   Mobile Responsiveness
+------------------------- */
+
+/* Small devices - below 480px */
+@media (max-width: 480px) {
+  .fonts-container { gap: 8px; }
+  .font-btn { width: 34px; height: 34px; font-size: 0.95rem; }
+}
+
+/* Extra small devices - below 350px */
+@media (max-width: 350px) {
+  .fonts-container { gap: 10px; }
+  .font-btn { width: 32px; height: 32px; font-size: 0.9rem; }
+}

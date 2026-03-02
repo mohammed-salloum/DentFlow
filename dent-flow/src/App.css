@@ -1,0 +1,46 @@
+/* =========================
+   App Container
+   Root layout container for the app
+   Handles full viewport height, flex layout, and horizontal overflow prevention
+========================= */
+.app-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;              /* Prevent horizontal scroll */
+  display: flex;                   /* Enable flex layout */
+  flex-direction: column;          /* Arrange child elements vertically */
+  min-height: 100vh;               /* Fallback for older browsers */
+  min-height: 100dvh;              /* Dynamic viewport height for mobile */
+  padding-inline: 1rem;            /* Horizontal padding for content */
+  direction: inherit;              /* Follow html direction (LTR/RTL) */
+  background-color: inherit;       /* Inherit background from parent */
+}
+
+/* =========================
+   App Content
+   Flexible content area inside the app container
+   Automatically fills remaining vertical space
+========================= */
+.app-content {
+  flex: 1;                         /* Fill available space in the container */
+  display: flex;                   /* Enable flex layout */
+  flex-direction: column;          /* Stack child elements vertically */
+  gap: 2rem;                        /* Vertical spacing between elements */
+  width: 100%;                      /* Full width of container */
+  min-width: 0;                     /* Prevent flex items from overflowing */
+  overflow: hidden;                 /* Hide any overflowing child elements */
+}
+
+/* =========================
+   Responsive Considerations
+   Optional: Adjust spacing on smaller screens
+========================= */
+@media (max-width: 768px) {
+  .app-container {
+    padding-inline: 0.5rem;        /* Reduce horizontal padding on smaller screens */
+  }
+
+  .app-content {
+    gap: 1rem;                      /* Reduce vertical gap for compact screens */
+  }
+}

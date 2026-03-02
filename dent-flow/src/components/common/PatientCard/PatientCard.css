@@ -1,0 +1,180 @@
+/* ================================
+   Patient Card Base Styles
+   --------------------------------
+   Base container for patient card, including
+   size, padding, background, shadow, and flex layout
+================================== */
+.patient-card {
+  position: relative;
+  width: 180px;
+  min-height: 260px;
+  background: var(--card-bg);          /* Card background color from theme */
+  border-radius: var(--radius-lg);     /* Rounded corners */
+  padding: 16px 10px;
+  box-shadow: var(--shadow-md);        /* Default shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: none;                     /* Base transition disabled */
+}
+
+.patient-card:hover {
+  transform: translateY(-3px);         /* Lift effect on hover */
+  box-shadow: var(--shadow-lg);        /* Stronger shadow on hover */
+}
+
+/* ================================
+   Status Bar
+   --------------------------------
+   Small colored bar at top to indicate
+   patient status (incoming, waiting, etc.)
+================================== */
+.status-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  transition: background 0.3s ease;    /* Smooth color transitions */
+}
+
+/* Color-coded status indicators */
+.status-bar.incoming { background: var(--warning); }
+.status-bar.waiting { background: var(--info); }
+.status-bar.in-treatment { background: var(--error); }
+.status-bar.done { background: var(--success); }
+
+/* ================================
+   Patient Information Layout
+   --------------------------------
+   Flex column layout for name, phone, booking info, and badges
+================================== */
+.patient-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary) !important; /* Primary text color for name */
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);        /* Secondary text for details */
+}
+
+/* ================================
+   Icons
+   --------------------------------
+   Default and subtle icon styling
+================================== */
+.icon {
+  font-size: 14px;
+  color: var(--text-primary);          /* Main icon color */
+}
+
+.icon.subtle {
+  color: var(--text-muted);            /* Lighter color for secondary icons */
+}
+
+/* ================================
+   Phone Link
+   --------------------------------
+   Clickable phone number with brand color
+================================== */
+.phone-link {
+  color: var(--brand-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.phone-link:hover { 
+  text-decoration: underline;          /* Visual feedback on hover */
+}
+
+/* ================================
+   Badges (Blood Type & Booking Type)
+   --------------------------------
+   Small badge indicators with background
+   and font styling
+================================== */
+.blood-badge {
+  background: var(--danger-text);
+  color: var(--btn-primary-text);
+  padding: 4px 10px;
+  border-radius: var(--radius-lg);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.booking-badge {
+  background: var(--bg-muted);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+/* ================================
+   Card Actions (Buttons)
+   --------------------------------
+   Vertical stack of buttons with spacing
+================================== */
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.patient-card .btn {
+  height: 32px;
+  font-size: 12px;
+  border-radius: var(--radius-lg);
+  padding: 0 8px;
+  min-width: 80px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all var(--transition-base); /* Smooth hover/focus effects */
+}
+
+/* ================================
+   Responsive Design for Mobile
+   --------------------------------
+   Adjust card width and layout for smaller screens
+================================== */
+@media (max-width: 768px) {
+
+  .patients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .patient-card {
+    width: auto;
+    flex: 1 1 160px;   /* Flexible width to fill space */
+    max-width: 200px;   /* Maximum width limit */
+  }
+
+}

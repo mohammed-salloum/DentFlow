@@ -1,0 +1,306 @@
+/* =========================
+   Patients Toolbar
+   Main container for toolbar, handles background, padding, and transitions
+=========================== */
+.patients-toolbar {
+  background-color: var(--bg-surface);
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  color: var(--text-primary);
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+/* =========================
+   Toolbar Top Row
+   Flex container for search and icons, responsive wrap
+=========================== */
+.toolbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* allows wrapping on mobile */
+}
+
+/* =========================
+   Search Wrapper
+   Container for search input and refresh icon
+=========================== */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 400px;
+}
+
+/* =========================
+   Search Input
+=========================== */
+.search-container {
+  position: relative;
+  flex: 1;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 0.4rem 2rem 0.4rem 2.5rem;
+  font-size: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  transition: padding var(--transition-fast), background var(--transition-fast), color var(--transition-fast), border var(--transition-fast);
+}
+
+/* Search icon positioning */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+[dir="ltr"] .search-icon { left: 1rem; }
+[dir="rtl"] .search-icon { right: 1rem; }
+
+/* Clear search icon */
+.clear-search {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: color var(--transition-fast);
+}
+.clear-search:hover { color: var(--danger-bg); }
+[dir="ltr"] .clear-search { right: 0.75rem; }
+[dir="rtl"] .clear-search { left: 0.75rem; }
+
+/* =========================
+   Refresh Icon
+   Fixed space and hover spin animation
+=========================== */
+.refresh-icon-wrapper {
+  flex: 0 0 28px; /* fixed width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.refresh-icon-wrapper:hover { color: var(--btn-primary-bg); }
+
+.refresh-icon.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* =========================
+   Search Results Info
+   Fixed height for smooth layout transitions
+=========================== */
+.search-results-info {
+  min-height: 1.2rem;
+  margin-top: 0.5rem;
+  transition: opacity 0.2s ease;
+  opacity: 1;
+  color: var(--text-primary);
+}
+
+.search-results-info .no-results { color: var(--danger-bg); }
+.search-results-info.empty { opacity: 0; }
+
+/* =========================
+   Toolbar Icons
+=========================== */
+.toolbar-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--text-primary);
+}
+.toolbar-icon:hover { color: var(--btn-primary-bg); }
+.icon-tooltip { position: relative; cursor: pointer; }
+
+/* =========================
+   User Dropdown
+=========================== */
+.user-dropdown {
+  position: absolute;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 150px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+  overflow: hidden;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.user-dropdown button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.6rem;
+  color: var(--text-primary);
+  text-align: start;
+  transition: background 0.2s;
+}
+.user-dropdown button:hover { background-color: var(--bg-muted); }
+.dropdown-icon { width: 20px; height: 20px; }
+
+/* =========================
+   Language Dropdown
+=========================== */
+.lang-dropdown-wrapper { position: relative; }
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.lang-btn:hover { color: var(--btn-primary-bg); }
+
+.lang-dropdown {
+  position: absolute;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-sm);
+  min-width: 100px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+.lang-dropdown.ltr { left: 0; right: auto; }
+.lang-dropdown.rtl { right: 0; left: auto; }
+
+.lang-dropdown button {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+/* Flags */
+.lang-flag { width: 20px; height: 20px; }
+.lang-flag.enlarged { width: 24px; height: 24px; }
+
+/* =========================
+   Stats Cards
+=========================== */
+.stats-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  padding: 0.5rem;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  color: var(--text-primary);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card.active {
+  background-color: var(--btn-primary-bg);
+  border-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}
+
+.stat-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--btn-primary-text);
+  margin-bottom: 0.5rem;
+}
+[dir="ltr"] .stat-badge { margin-left: auto; margin-right: 0; }
+[dir="rtl"] .stat-badge { margin-right: auto; margin-left: 0; }
+
+/* Status Colors */
+.status-all { background-color: var(--text-secondary); }
+.status-incoming { background-color: var(--warning); }
+.status-waiting { background-color: var(--info); }
+.status-inTreatment { background-color: var(--error); }
+.status-done { background-color: var(--success); }
+
+/* =========================
+   Responsive – Mobile
+=========================== */
+@media (max-width: 768px) {
+  .patients-toolbar { padding: 0.5rem; }
+  
+  .toolbar-top { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+  
+  .search-wrapper { flex-direction: row; gap: 0.5rem; width: 100%; max-width: none; }
+  .search-container input { flex: 1; font-size: 0.75rem; padding: 0.3rem 2rem; }
+  
+  .toolbar-icons {
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    order: 2;
+    margin-top: 0.25rem;
+  }
+  
+  .lang-dropdown button, .user-dropdown button { font-size: 0.75rem; padding: 0.4rem 0.6rem; }
+  
+  .stats-container {
+    order: 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+  }
+  .stat-card:first-child { grid-column: span 2; }
+  .stat-card { padding: 0.25rem; font-size: 0.75rem; }
+  .stat-badge { font-size: 0.65rem; padding: 0.2rem 0.4rem; }
+  .lang-flag.enlarged { width: 20px; height: 20px; }
+}

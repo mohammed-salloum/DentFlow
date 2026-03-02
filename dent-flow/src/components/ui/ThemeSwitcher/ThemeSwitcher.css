@@ -1,0 +1,113 @@
+/* =========================
+   ThemeSwitcher.css - Themed & Responsive Buttons
+========================= */
+
+/* ---------- Container (Desktop) ---------- */
+.theme-container.inline {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Two columns for inline layout */
+  gap: 8px;                                /* Space between buttons */
+  justify-items: start;                     /* Align buttons to start */
+  align-items: center;                      /* Vertically center buttons */
+}
+
+/* RTL adjustment for text alignment */
+.theme-container.inline.rtl {
+  direction: rtl;
+}
+
+/* ---------- Theme Buttons ---------- */
+.theme-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;                                 /* Space between icon and name */
+  padding: 6px 10px;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);  /* Responsive font sizing */
+  border-radius: var(--radius-md, 10px);
+  background-color: var(--bg-surface, #fff);
+  border: 2px solid transparent;           /* Default border */
+  box-sizing: border-box;
+  cursor: pointer;
+  width: auto;
+  min-width: 120px;                         /* Button min width */
+  max-width: 160px;                         /* Button max width */
+  transition: all 0.2s ease-in-out;         /* Smooth hover/active transition */
+  color: var(--brand-primary, #2563eb);     /* Theme-based text color */
+}
+
+/* Icon inside button */
+.theme-icon {
+  font-size: clamp(1rem, 2vw, 1.2rem);      /* Responsive icon size */
+  pointer-events: none;                     /* Prevent icon from intercepting clicks */
+  color: var(--brand-primary, #2563eb);
+}
+
+/* Hover state for buttons */
+.theme-btn:hover {
+  background-color: var(--brand-primary, #2563eb);
+  color: var(--btn-primary-text, #fff);
+  box-shadow: 0 0 6px var(--brand-glow, rgba(37,99,235,0.35)); /* Glow effect */
+}
+
+/* Hover state for icon */
+.theme-btn:hover .theme-icon {
+  color: var(--btn-primary-text, #fff);
+}
+
+/* Active button state */
+.theme-btn.active,
+.theme-btn:active {
+  border-color: var(--brand-primary, #2563eb);
+  background-color: var(--brand-primary, #2563eb);
+  color: var(--btn-primary-text, #fff);
+  box-shadow: 0 0 6px var(--brand-glow, rgba(37,99,235,0.35));
+}
+
+/* Active state for icon */
+.theme-btn.active .theme-icon,
+.theme-btn:active .theme-icon {
+  color: var(--btn-primary-text, #fff);
+}
+
+/* Theme name text */
+.theme-name {
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  font-weight: 500;
+}
+
+/* =========================
+   Mobile Adjustments
+========================= */
+@media (max-width: 768px) {
+  /* Stack buttons vertically on smaller screens */
+  .theme-container.inline {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 6px;
+    justify-content: start;
+  }
+
+  /* RTL adjustment for mobile */
+  .theme-container.inline.rtl {
+    direction: rtl;
+  }
+
+  /* Button sizing adjustments for mobile */
+  .theme-btn {
+    padding: 4px 6px;
+    gap: 3px;
+    min-width: 90px;
+    max-width: 130px;
+    font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+  }
+
+  /* Icon sizing for mobile */
+  .theme-icon {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+  }
+
+  /* Theme name sizing for mobile */
+  .theme-name {
+    font-size: clamp(0.65rem, 1.2vw, 0.8rem);
+  }
+}

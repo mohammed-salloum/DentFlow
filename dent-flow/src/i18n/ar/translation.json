@@ -1,0 +1,118 @@
+{
+  "titles": {
+    "dashboard": "DentFlow | نظام إدارة العيادات الذكي",
+    "settings": "الإعدادات | DentFlow",
+    "notFound": "الصفحة غير موجودة | DentFlow"
+  },
+
+  "settings": {
+    "title": "الإعدادات",
+    "fontSize": "حجم الخط",
+    "themes": "الثيمات"
+  },
+
+  "themes": {
+    "light": "فاتح",
+    "dark": "داكن"
+  },
+  
+  "appBrand":{
+   "title": "DentFlow",
+   "subtitle": "نظام إدارة العيادات الذكي"
+},
+
+"dashboard": {
+  "title": "لوحة التحكم",
+  "subtitle": "نظرة عامة على نشاط اليوم"
+},
+
+"patientsToolbar": {
+  "searchPlaceholder": "ابحث بالاسم أو الهاتف...",
+  "settings": "الإعدادات",
+  "language": "اللغة",
+  "account": "الحساب",
+  "clearFilters": "مسح الفلاتر",
+  "resultsFound": "تم العثور على {{count}} نتيجة",
+  "noResults": "لم يتم العثور على نتائج",
+  "status": {
+    "all": "الكل",
+    "incoming": "قادم",
+    "waiting": "في الانتظار",
+    "inTreatment": "قيد العلاج",
+   "done": "تم العلاج"
+  },
+  "user": {
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج"
+  },
+  "lang": {
+    "ar": "العربية",
+    "en": "الإنجليزية"
+  }
+},
+  "patientsBoard": {
+    "incoming": "قادم",
+    "waiting": "في الانتظار",
+    "inTreatment": "قيد العلاج",
+    "done": "تم العلاج",
+    "noPatients": "لا يوجد مرضى"
+  },
+  "confirmationModal": {
+    "confirmCancellation": "تأكيد الإلغاء",
+    "cancelBookingText": "هل أنت متأكد أنك تريد إلغاء الحجز لـ {{name}}؟",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "confirmDeletion": "تأكيد الحذف",
+    "deletePatientText": "هل أنت متأكد أنك تريد حذف {{name}}؟"
+},
+
+    "patientCard": {
+    "moveToWaiting": "نقل إلى الانتظار",
+    "cancelBooking": "إلغاء الحجز",
+    "startTreatment": "بدء العلاج",
+    "finishTreatment": "إنهاء العلاج",
+    "deletePatient": "حذف",
+    "moveToArchive": "نقل للأرشيف"
+  },
+
+  "bookingForm": {
+    "title": "حجز موعد",
+    "subText": "يرجى تعبئة المعلومات أدناه.\nجميع الحقول مطلوبة لإتمام عملية الحجز بنجاح.",
+    "nameLabel": "اسم المريض",
+    "namePlaceholder": "أدخل الاسم الكامل للمريض",
+    "nameRequired": "يرجى إدخال الاسم الكامل للمريض",
+    "nameInvalid": "يجب أن يحتوي الاسم على 2–4 كلمات، كل كلمة لا تقل عن 3 أحرف، أحرف فقط",
+    "nameDoubleSpaces": "يرجى عدم استخدام مسافات متتالية؛ مسافة واحدة بين الكلمات كافية",
+    "max50Chars": "يجب ألا يتجاوز الاسم 50 حرفًا",
+
+    "phoneLabel": "هاتف المريض",
+    "phonePlaceholder": "أدخل رقم هاتف المريض",
+    "phoneRequired": "الرجاء إدخال رقم هاتف المريض",
+    "phoneInvalid": "يرجى إدخال رقم هاتف صالح للمريض",
+    "phonePrefixError": "يرجى إدخال رقم هاتف يبدأ بالبادئة الصحيحة لشبكة سيريتل أو MTN",
+
+    "bloodTypeLabel": "فصيلة الدم",
+    "bloodTypePlaceholder": "اختر فصيلة الدم",
+    "bloodTypeRequired": "يرجى اختيار فصيلة دم للمريض",
+
+    "dateLabel": "تاريخ الحجز",
+    "datePlaceholder": "اختر تاريخ الحجز",
+    "dateRequired": "يرجى اختيار تاريخ الحجز",
+    "dateFuture": "يجب أن يكون تاريخ الحجز اليوم أو تاريخاً لاحقاً",
+
+    "bookingTypeLabel": "نوع الحجز",
+    "bookingTypePlaceholder": "اختر نوع الحجز",
+    "bookingTypeRequired": "يرجى اختيار نوع الحجز",
+    "bookingType": {
+      "preBooked": "حجز مسبق",
+      "walkIn": "مراجعة مباشرة",
+      "emergency": "حالة طارئة"
+    },
+    "submitButton": "احجز الآن",
+    "submitting": "جاري الإرسال...",
+    "errorMessage": "❌ يرجى تعبئة جميع الحقول المطلوبة وإكمال النموذج بشكل صحيح",
+    "successMessage": "✔ تم حجز الموعد بنجاح! تمت إضافة المريض إلى قائمة القادمين"
+  }
+
+}

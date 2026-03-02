@@ -1,0 +1,90 @@
+/* Container for the entire brand link */
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px; /* Space between icon and text */
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+
+  /* Logical properties for RTL support */
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+}
+
+/* Hover effect for brand link */
+.app-brand:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+}
+
+/* Focus style for keyboard accessibility */
+.app-brand:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+/* Brand icon container */
+.brand-icon {
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--brand-primary),
+    var(--brand-primary-hover)
+  );
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+/* Hover effect for the icon */
+.app-brand:hover .brand-icon {
+  transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Brand text container */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+/* Brand title */
+.brand-text h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.3px;
+}
+
+/* Brand subtitle */
+.brand-text p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  opacity: 0.85;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .app-brand {
+    margin-inline: auto;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .brand-text {
+    align-items: center;
+    text-align: center;
+  }
+}

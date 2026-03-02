@@ -1,0 +1,116 @@
+{
+"titles": {
+  "dashboard": "DentFlow | Smart Clinic Management",
+  "settings": "Settings | DentFlow",
+  "notFound": "Page Not Found | DentFlow"
+},
+
+  "settings": {
+    "title": "Settings",
+    "fontSize": "Font Size",
+    "themes": "Themes"
+  },
+
+  "themes": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  
+  "appBrand":{
+  "title": "DentFlow",
+  "subtitle": "Smart Clinic Management"
+},
+
+"dashboard": {
+  "title": "Dashboard",
+  "subtitle": "Overview of today's activity"
+},
+
+"patientsToolbar": {
+  "searchPlaceholder": "Search by name or phone...",
+    "settings": "Settings",
+    "language": "Language",
+    "account": "Account",
+    "clearFilters": "Clear Filters",
+    "resultsFound": "{{count}} results found",
+    "noResults": "No results found",
+    "status": {
+      "all": "All",
+      "incoming": "Incoming",
+      "waiting": "Waiting",
+      "inTreatment": "In Treatment",
+      "done": "Done"
+    },
+    "user": {
+      "profile": "Profile",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+     "lang": {
+      "ar": "Arabic",
+      "en": "English"
+    }
+  },
+  "patientsBoard": {
+    "incoming": "Incoming",
+    "waiting": "Waiting",
+    "inTreatment": "In Treatment",
+    "done": "Done",
+    "noPatients": "No patients"
+  },
+  "confirmationModal": {
+    "confirmCancellation": "Confirm Cancellation",
+    "cancelBookingText": "Are you sure you want to cancel the booking for {{name}}?",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "confirmDeletion": "Confirm Deletion",
+    "deletePatientText": "Are you sure you want to delete {{name}}?"
+  },
+"patientCard": {
+    "moveToWaiting": "Move to Waiting",
+    "cancelBooking": "Cancel Booking",
+    "startTreatment": "Start Treatment",
+    "finishTreatment": "Finish",
+    "deletePatient": "Delete",
+    "moveToArchive": "Move to Archive"
+  },
+
+  "bookingForm": {
+    "title": "Book an Appointment",
+    "subText":"Please fill in the information below.\nAll fields are required to complete the booking successfully.",
+    "nameLabel": "Patient Name",
+    "namePlaceholder": "Enter the patient's full name",
+    "nameRequired": "Please enter the patient's full name",
+    "nameInvalid": "The name must contain 2–4 words, each word at least 3 letters, letters only",
+    "nameDoubleSpaces": "Please do not use consecutive spaces; a single space between words is sufficient",
+    "max50Chars": "The name must not exceed 50 characters",
+
+    "phoneLabel": "Patient Phone",
+    "phoneRequired": "Please enter the patient's phone number",
+    "phonePlaceholder": "Enter the patient's phone number",
+    "phoneInvalid": "Please enter a valid phone number for the patient",
+    "phonePrefixError": "Please enter a valid phone number starting with a correct prefix of Syriatel or MTN",
+
+    "bloodTypeLabel": "Blood Type",
+    "bloodTypePlaceholder": "Select blood type",
+    "bloodTypeRequired": "Please select a blood type for the patient",
+
+    "dateLabel": "Booking Date",
+    "datePlaceholder": "Select booking date",
+    "dateRequired": "Please select a booking date",
+    "dateFuture": "The booking date must be today or a later date",
+
+    "bookingTypeLabel": "Booking Type",
+    "bookingTypePlaceholder": "Select booking type",
+    "bookingTypeRequired": "Please select a booking type",
+    "bookingType": {
+      "preBooked": "Pre-Booked",
+      "walkIn": "Walk-In",
+      "emergency": "Emergency"
+    },
+    "submitButton": "Book Now",
+    "submitting": "Submitting...",
+    "errorMessage": "❌ Please fill in all required fields and complete the form correctly",
+    "successMessage": "✔ Appointment booked successfully! The patient has been added to the incoming list"
+  }
+}

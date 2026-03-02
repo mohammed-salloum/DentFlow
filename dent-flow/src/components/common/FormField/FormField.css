@@ -1,0 +1,326 @@
+/* =========================================
+   ⚙️ Main Form Container
+   Centered form with responsive width and padding
+========================================= */
+.form-wrapper {
+  width: 100%;                   /* Take full width of parent */
+  max-width: 600px;              /* Limit width on large screens */
+  margin: 0 auto;                /* Center horizontally */
+  padding: 0 12px;               /* Horizontal padding for small screens */
+  box-sizing: border-box;        /* Include padding/border in total width */
+  font-family: var(--font-ltr);  /* Default font, can switch for RTL */
+}
+
+/* =========================================
+   ⚙️ Form Field Wrapper
+   Flex layout to align label and input horizontally
+========================================= */
+.form-field-wrapper {
+  display: flex;
+  flex-direction: row;           /* Label + input side by side */
+  align-items: flex-start;       /* Align top of label with input */
+  width: 100%;
+  box-sizing: border-box;
+  transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth UI changes */
+}
+
+/* =========================================
+   Label Styling
+   Fixed width with consistent spacing
+========================================= */
+.form-field-wrapper label {
+  flex: 0 0 100px;               /* Fixed width for label */
+  color: var(--text-primary);
+  font-weight: 600;              /* Semi-bold text */
+  font-size: clamp(0.8rem, 0.7rem, 0.8rem); /* Responsive font size */
+  margin-right: 12px;            /* Space between label and input */
+  margin-top: 0.5rem;            /* Vertical spacing for alignment */
+  white-space: nowrap;           /* Prevent label from wrapping */
+}
+
+/* =========================================
+   RTL Support for Labels
+   Adjust spacing for Right-to-Left layout
+========================================= */
+.form-field-wrapper.rtl label {
+  margin-left: 12px;
+  margin-right: 0;
+}
+
+/* =========================================
+   Input Container
+   Wraps input/select/textarea and messages
+========================================= */
+.form-field-wrapper .field-wrapper {
+  display: flex;
+  flex-direction: column;        /* Stack input and message vertically */
+  flex: 1;                       /* Fill remaining horizontal space */
+  max-width: 100%;
+}
+
+/* =========================================
+   💬 Input, Select, Textarea & DatePicker Styling
+   Consistent size, padding, border, and color
+========================================= */
+.form-input,
+.phone-container .form-control,
+select.form-input,
+.datepicker-wrapper input {
+  width: 100%;
+  height: 48px;
+  min-height: 48px;              /* Prevent shrinking */
+  font-size: 16px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  background-color: var(--input-bg);
+  box-sizing: border-box;
+}
+
+/* Focus state for inputs: highlight border and glow */
+.form-input:focus,
+.phone-container .form-control:focus,
+.datepicker-wrapper input:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: 0 0 4px 1px var(--input-focus);
+}
+
+/* =========================================
+   📱 Phone Input Container
+   Manages flag positioning and input padding
+========================================= */
+.phone-container {
+  width: 100%;
+  position: relative;
+  background-color: transparent;
+}
+
+/* Position selected flag & dropdown inside input */
+.phone-container .selected-flag,
+.phone-container .flag-dropdown {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Hide default dropdown arrows */
+.phone-container .selected-flag .arrow,
+.phone-container .flag-dropdown .arrow {
+  display: none !important;
+}
+
+/* Default LTR positioning */
+.phone-container .selected-flag,
+.phone-container .flag-dropdown {
+  left: 12px;
+}
+
+/* RTL adjustment: move flag to right side */
+.form-field-wrapper.rtl .phone-container .selected-flag,
+.form-field-wrapper.rtl .phone-container .flag-dropdown {
+  right: 12px;
+  left: auto;
+}
+
+/* Add padding to leave space for flag */
+.phone-container .form-control {
+  padding-left: 64px;
+  padding-right: 12px;
+}
+
+/* RTL input padding reversed */
+.form-field-wrapper.rtl .phone-container .form-control {
+  padding-left: 12px;
+  padding-right: 64px;
+}
+
+/* =========================================
+   💬 Field Messages: Error & Success
+   Display below the input
+========================================= */
+.field-message {
+  font-size: 0.75rem;
+  margin-top: 0.35rem;
+  color: var(--error);
+}
+
+/* Generic error/success box */
+.error,
+.success {
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-weight: 500;
+}
+
+/* Error styling */
+.error {
+  color: var(--error);
+  border: 1px solid var(--error);
+}
+
+/* Success styling */
+.success {
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+/* =========================================
+   ⚡️ Responsive Adjustments for Tablets
+========================================= */
+@media (max-width: 768px) {
+  .form-field-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .form-field-wrapper label {
+    width: 110px;
+  }
+}
+
+/* =========================================
+   🔹 Mobile Responsive Fields
+   Stack label above input and adjust spacing
+========================================= */
+@media (max-width: 480px) {
+  .form-field-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 8px;
+  }
+
+  .form-field-wrapper label {
+    width: 100%;
+    margin: 0 0 6px 0;
+    white-space: normal;
+    flex: none;
+    font-size: 0.9rem;
+  }
+
+  .form-field-wrapper .field-wrapper {
+    width: 100%;
+  }
+
+  .form-input,
+  .phone-container .form-control,
+  .datepicker-wrapper input {
+    width: 100%;
+    min-height: 48px;
+    font-size: 16px;
+    padding: 10px 12px;
+    line-height: 1.4;
+  }
+
+  textarea.form-input {
+    min-height: 90px;
+  }
+
+  .phone-container .selected-flag,
+  .phone-container .flag-dropdown {
+    width: 48px;
+  }
+
+  .phone-container:not(.rtl) .form-control {
+    padding-left: 60px;
+    padding-right: 12px;
+  }
+
+  .form-field-wrapper.rtl .phone-container .form-control {
+    padding-left: 12px;
+    padding-right: 60px;
+  }
+}
+
+/* =========================================
+   🔹 RTL Adjustments for DatePicker
+   Maintain proper date formatting (YYYY-MM-DD)
+========================================= */
+.form-field-wrapper.rtl .datepicker-wrapper input {
+  text-align: right;
+  direction: ltr; /* Keep year-month-day order for dates */
+}
+
+/* =========================================
+   🇨🇦 Country List Styling for Phone Input
+========================================= */
+.react-tel-input .country-list {
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: var(--radius-md);
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+/* Individual country item */
+.react-tel-input .country-list .country {
+  display: flex !important;
+  align-items: center;
+  gap: 0.35rem !important;
+  padding: 6px 10px !important;
+  margin: 0 !important;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+}
+
+/* Dial code color */
+.react-tel-input .country-list .country .dial-code {
+  color: var(--brand-primary);
+}
+
+/* Hover & active states for country list */
+.react-tel-input .country-list .country:hover,
+.react-tel-input .country-list .country.highlight:hover,
+.react-tel-input .country-list .country.active:hover {
+  background-color: var(--brand-primary) !important; /* Highlight background */
+  color: #ffffff !important; /* White text on hover */
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.react-tel-input .country-list .country:hover .dial-code {
+  color: #ffffff !important; /* Dial code color matches hover text */
+}
+/* Highlighted or active country (not hovered) */
+.react-tel-input .country-list .country.highlight,
+.react-tel-input .country-list .country.active {
+  background-color: transparent !important;
+  color: var(--brand-primary) !important;
+  font-weight: 600;
+}
+
+/* RTL adjustments for dial code & input text */
+.form-field-wrapper.rtl .react-tel-input .country-list .country .dial-code {
+  direction: ltr !important; /* Keep numbers LTR */
+  unicode-bidi: embed !important;
+  text-align: left !important;
+}
+
+.form-field-wrapper.rtl .react-tel-input .form-control {
+  direction: ltr !important;
+  unicode-bidi: embed !important;
+  text-align: right !important;
+  padding-right: 60px !important;
+  padding-left: 10px !important;
+}
+
+/* =========================================
+   🔹 Force Direction Classes for Inputs
+========================================= */
+.rtl-input {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr-input {
+  direction: ltr;
+  text-align: left;
+}

@@ -1,0 +1,75 @@
+/* =========================
+   Booking Form Card (Theme-Compatible)
+========================= */
+
+/* --------- Card Container --------- */
+/* Main container for the booking form card with theme-aware colors, padding, and transitions */
+.booking-form-card {
+  border-radius: var(--radius-md, 12px); /* Rounded corners using theme variable or fallback */
+  background-color: var(--card-bg, var(--bg-surface)); /* Card background from theme */
+  color: var(--text-primary); /* Primary text color */
+  padding: 16px; /* Inner spacing */
+  display: flex;
+  flex-direction: column; /* Vertical stacking of children */
+  transition: transform 0.2s ease, 
+              box-shadow 0.2s ease, 
+              background 0.3s ease, 
+              color 0.3s ease; /* Smooth hover transitions */
+}
+
+/* Hover effect: subtle lift and shadow for better UX */
+.booking-form-card:hover {
+  transform: translateY(-2px); /* Slight upward movement */
+  box-shadow: var(--shadow-md, 0 6px 20px rgba(0,0,0,0.06)); /* Medium shadow */
+}
+
+/* --------- Booking Form Header --------- */
+/* Container for title and description at the top of the card */
+.booking-form-header {
+  display: flex;
+  flex-direction: column; /* Stack heading and subtext vertically */
+  margin-bottom: 1rem; /* Spacing below header */
+}
+
+/* --------- Header Title with Icon --------- */
+/* Aligns icon and title text */
+.booking-form-header h5 {
+  display: flex;
+  align-items: center; /* Vertical alignment of text and icon */
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4; /* Slightly increased line height for readability */
+  margin: 0; /* Remove default heading margin */
+}
+
+/* Wrapper around the icon to control spacing and alignment */
+.booking-form-header h5 .icon-wrapper {
+  display: flex; /* Ensure icon aligns with text */
+  align-items: center;
+  flex-shrink: 0; /* Prevent icon from shrinking on smaller screens */
+  margin-right: 1rem; /* Space between icon and text in LTR */
+}
+
+/* RTL support: swap margin for right-to-left layout */
+html[dir="rtl"] .booking-form-header h5 .icon-wrapper {
+  margin-right: 0;
+  margin-left: 1rem; /* Space between icon and text in RTL */
+}
+
+/* Styling the icon itself */
+.booking-form-header h5 .icon-wrapper .icon {
+  display: block; /* Ensures icon is treated as a block element */
+  width: 24px; /* Fixed width */
+  height: 24px; /* Fixed height */
+  min-width: 24px; /* Prevents icon from shrinking */
+  min-height: 24px;
+  color: var(--brand-primary); /* Brand color for consistency */
+}
+
+/* --------- Subtext / Description --------- */
+/* Small descriptive text below the header */
+.booking-form-header p {
+  font-size: 0.9rem; /* Slightly smaller than the heading */
+  margin: 0.25rem 0 0 0; /* Top margin only */
+  color: var(--text-muted); /* Muted text color for secondary information */
+}

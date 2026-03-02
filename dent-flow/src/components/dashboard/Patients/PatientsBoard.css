@@ -1,0 +1,159 @@
+/* =========================
+   Container
+   --------------------------------
+   Main wrapper for the PatientsBoard component
+   Uses full width, column flex layout, and padding
+=========================== */
+.patients-board-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 6px; /* Compact padding for dense layout */
+  box-sizing: border-box;
+}
+
+/* =========================
+   Rows
+   --------------------------------
+   Flex rows to hold status columns
+   Gap and max-width for large screens
+=========================== */
+.patients-board-row {
+  display: flex;
+  gap: 20px; /* Space between status columns on desktop */
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+/* Fixed 3-column layout row (no wrapping) */
+.patients-board-row.no-wrap {
+  flex-wrap: nowrap;
+  justify-content: space-between; /* Even spacing between columns */
+  gap: 0; /* Gap handled by space-between */
+}
+
+/* =========================
+   Patients Grid
+   --------------------------------
+   Flex container for patient cards inside a status column
+   Wraps cards and centers them
+=========================== */
+.patients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* Space between cards */
+  justify-content: center;
+  padding: 16px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Status Header
+   --------------------------------
+   Contains status icon, label, and optional "no patients" message
+=========================== */
+.status-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   Status Icons
+   --------------------------------
+   Icon size, color, and theme-based styling
+=========================== */
+.status-icon {
+  font-size: 24px;
+  color: var(--text-primary); /* Automatically adjusts based on theme */
+  transition: color var(--transition-base);
+}
+
+/* Optional: colors per status type */
+.status-icon.incoming { color: var(--warning); }
+.status-icon.waiting { color: var(--info); }
+.status-icon.in-treatment { color: var(--error); }
+.status-icon.done { color: var(--success); }
+
+/* Status label styling */
+.status-header h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-primary); /* Theme-aware */
+  transition: color var(--transition-base);
+}
+
+/* Message when no patients exist in a status */
+.no-patients {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* =========================
+   Divider
+   --------------------------------
+   Simple horizontal line separating top & bottom sections
+=========================== */
+.patients-board-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color, #eef2f6);
+  margin: 10px 0;
+  display: block;
+}
+
+/* =========================
+   Sections: Top & Bottom
+   --------------------------------
+   Flex layout for top and bottom rows of status columns
+=========================== */
+.top-section,
+.bottom-section {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Single status filter layout */
+.patients-board-row.single-filter {
+  justify-content: center;
+}
+
+.patients-board-row.single-filter .patients-board-col {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 500px; /* Limit column width for better readability */
+}
+
+/* =========================
+   Responsive Design
+   --------------------------------
+   Adjust layout for mobile devices
+=========================== */
+@media (max-width: 768px) {
+  .patients-board-row,
+  .patients-board-row.no-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* Slightly larger spacing on mobile for readability */
+    flex-wrap: wrap;
+  }
+
+  .patients-board-col {
+    width: 100%;
+    max-width: 400px; /* Prevent columns from becoming too wide on small screens */
+  }
+}
