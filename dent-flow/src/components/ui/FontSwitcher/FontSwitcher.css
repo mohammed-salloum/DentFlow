@@ -1,5 +1,6 @@
 /* =========================
    Font Switcher - Themed
+   Professional font control buttons
 ========================= */
 
 /* Container holding all font control buttons */
@@ -22,36 +23,38 @@
   justify-content: center;
   color: var(--brand-primary, #2563eb); /* Text color based on theme */
   font-weight: 600;
-  font-family: var(--font-ltr, 'Inter', sans-serif); /* Theme-based font */
-  font-size: 1rem;
+  font-family: inherit; /* Inherit font family from parent */
   cursor: pointer;
-  transition: all 0.2s ease-in-out; /* Smooth hover and active animations */
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; /* Smooth hover/active transitions */
 }
 
-/* Hover state - colors and shadow according to theme */
+/* Hover state: change text color, background, and add glow */
 .font-btn:hover {
-  color: var(--btn-primary-text, #fff); /* Text changes to button text color */
+  color: var(--btn-primary-text, #fff); /* Change text color on hover */
   background-color: var(--brand-primary-hover, #1d4ed8); /* Hover background */
   box-shadow: 0 0 6px var(--brand-glow, rgba(37, 99, 235, 0.35)); /* Glow effect */
 }
 
-/* Active (pressed) state */
+/* Active (pressed) state: subtle shrink for feedback */
 .font-btn:active {
-  transform: scale(0.95); /* Slight shrink to indicate press */
+  transform: scale(0.95);
+}
+
+/* Focus state: visible focus ring for accessibility */
+.font-btn:focus {
+  outline: var(--focus-ring, 0 0 0 3px rgba(37, 99, 235, 0.3));
 }
 
 /* -------------------------
    Mobile Responsiveness
+   Adjust button sizes and gaps for smaller screens
 ------------------------- */
-
-/* Small devices - below 480px */
 @media (max-width: 480px) {
   .fonts-container { gap: 8px; }
-  .font-btn { width: 34px; height: 34px; font-size: 0.95rem; }
+  .font-btn { width: 34px; height: 34px; }
 }
 
-/* Extra small devices - below 350px */
 @media (max-width: 350px) {
   .fonts-container { gap: 10px; }
-  .font-btn { width: 32px; height: 32px; font-size: 0.9rem; }
+  .font-btn { width: 32px; height: 32px; }
 }

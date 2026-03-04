@@ -8,7 +8,10 @@
   "settings": {
     "title": "الإعدادات",
     "fontSize": "حجم الخط",
-    "themes": "الثيمات"
+    "themes": "الثيمات",
+    "increaseFont": "تكبير الخط",
+    "resetFont": "إعادة الخط الافتراضي",
+    "decreaseFont": "تصغير الخط"
   },
 
   "themes": {

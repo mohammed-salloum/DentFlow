@@ -7,50 +7,37 @@
    🌍 ROOT TOKENS (Variables) - Global Variables
 ========================= */
 :root {
-  /* ===== Typography ===== */
-  --font-ltr: 'Inter', sans-serif;   /* Default LTR font */
-  --font-rtl: 'Cairo', sans-serif;   /* RTL font */
-  --font-size-base: 16px;            /* Base font size */
 
-  /* ===== Radius ===== */
-  --radius-sm: 6px;   /* Small border radius */
-  --radius-md: 10px;  /* Medium border radius */
-  --radius-lg: 16px;  /* Large border radius */
-  --radius-xl: 22px;  /* Extra large border radius */
+  /* ================= Fonts ================= */
+  --main-font-ltr: 'Inter', sans-serif;
+  --main-font-rtl: 'Cairo', sans-serif;
+  --main-font-size: 16px;
 
-  /* ===== Motion ===== */
-  --transition-fast: 0.15s ease;   /* Fast transition */
-  --transition-base: 0.25s ease;   /* Base transition */
-  --transition-slow: 0.35s ease;   /* Slow transition */
+  /* ================= Radius ================= */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
 
-  /* ===== Layout ===== */
-  --container-width: 1200px;       /* Maximum container width */
+  /* ================= Motion ================= */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.35s ease;
 
-  /* ===== Brand Identity Default ===== */
-  --brand-primary: #2563eb;        /* Primary brand color */
-  --brand-primary-hover: #1d4ed8;  /* Hover state for primary color */
-  --brand-glow: rgba(37, 99, 235, 0.35); /* Brand glow effect */
-  --brand-secondary: #14b8a6;      /* Secondary brand color */
+  /* ================= Layout ================= */
+  --container-width: 1200px;
 
-  /* ===== Focus Ring ===== */
-  --focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.3); /* Focus outline */
+  /* ================= Brand ================= */
+  --brand-primary: #2563eb;
+  --brand-primary-hover: #1d4ed8;
+  --brand-glow: rgba(37, 99, 235, 0.35);
+  --brand-secondary: #14b8a6;
+
+  /* ================= Focus ================= */
+  --focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.3);
 }
 
-/* =========================
-   Global Body Styles
-========================== */
-body {
-  background: var(--bg-main);
-  color: var(--text-primary);
-  font-family: var(--font-ltr);
-  font-size: var(--font-size-base);
-  transition: background var(--transition-base), color var(--transition-base);
-}
 
-/* RTL font switch */
-html[dir="rtl"] body {
-  font-family: var(--font-rtl);
-}
 /* ==========================================================
    🌞 LIGHT THEME - Light Mode Colors
 ========================================================== */

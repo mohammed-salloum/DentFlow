@@ -37,6 +37,7 @@
 
 /* =========================
    Search Input
+   Padding adjusted to prevent placeholder overlap
 =========================== */
 .search-container {
   position: relative;
@@ -45,26 +46,35 @@
 
 .search-container input {
   width: 100%;
-  padding: 0.4rem 2rem 0.4rem 2.5rem;
+  padding: 0.4rem 2rem 0.4rem 2.5rem; /* space for icon */
   font-size: 0.75rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
   background-color: var(--input-bg);
   color: var(--text-primary);
-  transition: padding var(--transition-fast), background var(--transition-fast), color var(--transition-fast), border var(--transition-fast);
+  transition: padding var(--transition-fast), background var(--transition-fast),
+              color var(--transition-fast), border var(--transition-fast);
 }
 
-/* Search icon positioning */
+/* =========================
+   Search Icon
+   Positioned dynamically relative to input padding
+=========================== */
 .search-icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-muted);
+  pointer-events: none; /* prevent accidental clicks */
 }
-[dir="ltr"] .search-icon { left: 1rem; }
-[dir="rtl"] .search-icon { right: 1rem; }
 
-/* Clear search icon */
+/* LTR/RTL dynamic placement */
+[dir="ltr"] .search-icon { left: 0.8rem; }
+[dir="rtl"] .search-icon { right: 0.8rem; }
+
+/* =========================
+   Clear Search Icon
+=========================== */
 .clear-search {
   position: absolute;
   top: 50%;
@@ -75,15 +85,15 @@
   transition: color var(--transition-fast);
 }
 .clear-search:hover { color: var(--danger-bg); }
-[dir="ltr"] .clear-search { right: 0.75rem; }
-[dir="rtl"] .clear-search { left: 0.75rem; }
+[dir="ltr"] .clear-search { right: 0.6rem; }
+[dir="rtl"] .clear-search { left: 0.6rem; }
 
 /* =========================
    Refresh Icon
-   Fixed space and hover spin animation
+   Fixed width container and spin animation
 =========================== */
 .refresh-icon-wrapper {
-  flex: 0 0 28px; /* fixed width */
+  flex: 0 0 28px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,17 +101,21 @@
   color: var(--text-muted);
   transition: transform 0.2s ease, color 0.2s ease;
 }
-
 .refresh-icon-wrapper:hover { color: var(--btn-primary-bg); }
-
 .refresh-icon.spin {
   animation: spin 1s linear infinite;
 }
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* =========================
+   Other Toolbar Elements
+   Keep previous styling intact
+=========================== */
+/* ... rest of your toolbar CSS remains unchanged ... */
+
 
 /* =========================
    Search Results Info

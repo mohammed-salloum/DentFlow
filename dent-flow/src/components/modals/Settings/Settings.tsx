@@ -74,7 +74,7 @@ function Settings({ onClose }: SettingsProps) {
           {/* -------- FONT SIZE SECTION -------- */}
           <div className="settings-section">
             <h4>{t("settings.fontSize")}</h4>
-            <FontSwitcher defaultSize={18} />
+            <FontSwitcher defaultSize={16} />
           </div>
 
           <hr />

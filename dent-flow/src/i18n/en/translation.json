@@ -8,7 +8,10 @@
   "settings": {
     "title": "Settings",
     "fontSize": "Font Size",
-    "themes": "Themes"
+    "themes": "Themes",
+    "increaseFont": "Increase font size",
+    "resetFont": "Reset font size",
+    "decreaseFont": "Decrease font size"
   },
 
   "themes": {
