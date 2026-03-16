@@ -1,5 +1,9 @@
 name: Deploy DentFlow AE to Firebase
 
+# Force GitHub Actions to run on Node.js 24 to avoid deprecation warnings
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 # Trigger this workflow on every push to the main branch
 on:
   push:
@@ -24,12 +28,12 @@ jobs:
       # Step 3: Install project dependencies inside 'dent-flow' folder
       - name: Install dependencies
         run: npm install
-        working-directory: dent-flow
+        working-directory: ./dent-flow
 
       # Step 4: Build the project inside 'dent-flow' folder
       - name: Build project
         run: npm run build
-        working-directory: dent-flow
+        working-directory: ./dent-flow
 
       # Step 5: Deploy the built project to Firebase Hosting
       - name: Deploy to Firebase Hosting
