@@ -4,11 +4,17 @@ name: Deploy DentFlow AE to Firebase
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
-# Trigger this workflow on every push to the main branch
+# Trigger this workflow only on relevant changes to the main branch
 on:
   push:
     branches:
       - main
+    # Ignore changes to docs, README, or any file outside 'dent-flow/'
+    paths:
+      - 'dent-flow/**'
+    paths-ignore:
+      - 'README.md'
+      - 'docs/**'
 
 jobs:
   build-and-deploy:
