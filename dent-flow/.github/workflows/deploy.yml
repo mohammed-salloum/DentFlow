@@ -1,6 +1,6 @@
 name: Deploy DentFlow AE to Firebase
 
-# Trigger this workflow on push to the main branch
+# Trigger this workflow on every push to the main branch
 on:
   push:
     branches:
@@ -21,15 +21,17 @@ jobs:
         with:
           node-version: 20
 
-      # Step 3: Install project dependencies
+      # Step 3: Install project dependencies inside 'dent-flow' folder
       - name: Install dependencies
         run: npm install
+        working-directory: dent-flow
 
-      # Step 4: Build the project
+      # Step 4: Build the project inside 'dent-flow' folder
       - name: Build project
         run: npm run build
+        working-directory: dent-flow
 
-      # Step 5: Deploy to Firebase Hosting
+      # Step 5: Deploy the built project to Firebase Hosting
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -37,5 +39,5 @@ jobs:
           repoToken: "${{ secrets.FIREBASE_TOKEN }}"
           # Firebase project ID
           projectId: "dent-flow-ae"
-          # Deployment channel (use "preview" for testing, "live" for production)
+          # Deployment channel: use "preview" for testing or "live" for production
           channelId: "live"
