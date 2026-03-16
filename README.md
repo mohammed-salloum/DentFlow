@@ -27,19 +27,23 @@ Designed with performance, accessibility, multilingual support, theme control, a
 
 ---
 
-## 🔧 Tech Stack
+## 🔧 Tech Stack & Key Skills
 
-- ⚛️ React (Functional Components + Hooks)
-- 🔒 TypeScript
-- 🔄 React Router
-- 📝 react-hook-form + Yup
-- 🌐 i18next (multilingual + RTL)
-- 🎨 Bootstrap 5 + Custom CSS Theme
-- 🖋 Google Fonts (Inter / Cairo)
-- 📅 react-datepicker
-- 📞 libphonenumber-js
-- 💾 localStorage
-- 🔗 React Context API (Language, Theme, Font Management)
+- ⚛️ React (Functional Components + Hooks)  
+- 🔒 TypeScript  
+- 🔄 React Router  
+- 📝 react-hook-form + Yup  
+- 🌐 i18next (multilingual + RTL)  
+- 🎨 Bootstrap 5 + Custom CSS Theme  
+- 🖋 Google Fonts (Inter / Cairo)  
+- 📅 react-datepicker  
+- 📞 libphonenumber-js  
+- 💾 localStorage  
+- 🔗 React Context API (Language, Theme, Font Management)  
+- 🚀 **CI/CD & Deployment** – Automated deployment to Firebase Hosting using GitHub Actions  
+- 🧩 State Management & Component Communication  
+- 📱 Responsive Design (Mobile, Tablet, Desktop)  
+- 🔎 SEO Optimization & Social Media Metadata  
 
 ---
 
