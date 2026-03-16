@@ -35,8 +35,8 @@ jobs:
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          # GitHub Secret containing Firebase CI token
-          repoToken: "${{ secrets.FIREBASE_TOKEN }}"
+          # GitHub Secret containing Firebase service account JSON
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           # Firebase project ID
           projectId: "dent-flow-ae"
           # Deployment channel: use "preview" for testing or "live" for production
