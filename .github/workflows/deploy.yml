@@ -13,13 +13,13 @@ jobs:
     steps:
       # Step 1: Checkout the repository code
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Step 2: Set up Node.js environment
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
 
       # Step 3: Install project dependencies inside 'dent-flow' folder
       - name: Install dependencies
@@ -35,9 +35,8 @@ jobs:
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          # GitHub Secret containing Firebase service account JSON
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
-          # Firebase project ID
-          projectId: "dent-flow-ae"
-          # Deployment channel: use "preview" for testing or "live" for production
-          channelId: "live"
+          projectId: dent-flow-ae
+          channelId: live
+          entryPoint: dent-flow
