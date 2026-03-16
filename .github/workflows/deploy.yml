@@ -9,12 +9,9 @@ on:
   push:
     branches:
       - main
-    # Ignore changes to docs, README, or any file outside 'dent-flow/'
+    # Only run workflow when files inside 'dent-flow/' change
     paths:
       - 'dent-flow/**'
-    paths-ignore:
-      - 'README.md'
-      - 'docs/**'
 
 jobs:
   build-and-deploy:
